@@ -70,6 +70,13 @@
 #define USECASE_AUDIO_PLAYBACK_PRIMARY USECASE_AUDIO_PLAYBACK_DEEP_BUFFER
 #endif
 
+
+#define AUDIO_FORMAT_ALAC 0x1C000000UL
+#define SND_AUDIOCODEC_ALAC 0x00000019
+
+#define AUDIO_FORMAT_APE 0x1D000000UL
+#define SND_AUDIOCODEC_APE 0x00000020
+
 static unsigned int configured_low_latency_capture_period_size =
         LOW_LATENCY_CAPTURE_PERIOD_SIZE;
 
@@ -255,7 +262,7 @@ static int check_and_set_gapless_mode(struct audio_device *adev) {
         ALOGE("%s: Could not set gapless mode %d",
                        __func__, gapless_enabled);
          return -EINVAL;
-    }
+    }   
     return 0;
 }
 
